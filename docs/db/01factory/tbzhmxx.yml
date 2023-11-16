@@ -1,0 +1,45 @@
+type: object
+description: 招募信息表
+properties:
+  zhmxxbh:
+    type: string # text
+    format: # byte binary date date-time password
+    description: |
+      招募信息编号
+    example:
+  zhmgw:
+    type: string # text
+    format: # byte binary date date-time password
+    description: |
+      招募岗位
+    example:
+  zhmrsh:
+    type: integer # smallint
+    format: int32
+    description: |
+      招募人数
+    example:
+  bmfsh:
+    type: string # text
+    format: # byte binary date date-time password
+    description: |
+      报名方式
+    example:
+  bmkshshj:
+    type: integer # bigint
+    format: int64
+    description: |
+      报名开始时间
+    example:
+  bmjzhshj:
+    type: integer # bigint
+    format: int64
+    description: |
+      报名截止时间
+    example:
+  fbshj:
+    type: integer # bigint
+    format: int64
+    description: |
+      发布时间
+    example:

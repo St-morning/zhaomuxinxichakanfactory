@@ -1,0 +1,21 @@
+delete from "tb01user" where userid <> 'admin';
+INSERT INTO "tb01user" ("userid","username","sex","password","phone","state","ext") VALUES
+('001','王琳琳',1,'e10adc3949ba59abbe56e057f20f883e','8888666777',1,'{"email":"10000@qq.com","avatar":"/images/sys/avatar.png","idno":""}'),
+('002','测试用户乙',1,'e10adc3949ba59abbe56e057f20f883e','8888666777',1,'{"email":"10000@qq.com","avatar":"/images/sys/avatar.png","idno":""}');
+
+INSERT INTO "tb01userrole" ("userid", "roleid") VALUES
+('001','manager'),
+('admin','dev');
+
+INSERT INTO "tb01rolemenu" ("roleid", "menuid")
+VALUES
+	('dev', 'DEV000'),
+	('dev', 'DEV001'),
+	('dev', 'DEV002');
+
+-- 招募信息表测试数据
+INSERT INTO "tbzhmxx" ("zhmxxbh","zhmgw","zhmrsh","bmfsh","bmkshshj","bmjzhshj","fbshj")
+VALUES
+('001','社团活动志愿者',4,'线上报名',1675914419639,1675914419639,1675914419639),
+('002','飞行器爱好者',50,'现场报名',1675914419639,1675914419639,1675914419639),
+('003','共年团',9999,'同学介绍',1675914419639,1675914419639,1675914419639);
