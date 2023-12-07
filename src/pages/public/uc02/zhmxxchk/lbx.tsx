@@ -1,18 +1,19 @@
 import dt2str from '../../../../atoms/dt/dt2str';
+import { ZhmxxLbchxResult } from '../../../api/controllers/zhmxx';
 import Bdx from './bdx';
 
 /**
  * 列表项
  */
-export default function Lbx() {
+export default function Lbx({ data }: { data: ZhmxxLbchxResult }) {
 	return <>
 		<div className={'kapian'}>
 			<div className={'neirong'}>
-				<Bdx label='招募岗位' value='社团活动志愿者' />
-				<Bdx label='招募人数' value='5人' />
-				<Bdx label='报名方式' value='社团活动室现场报名' />
-				<Bdx label='开始时间' value={dt2str('2022-08-18 8:00:00', 'datetime')} />
-				<Bdx label='截止时间' value={dt2str('2022-08-20 18:00:00', 'datetime')} />
+				<Bdx label='招募岗位' value={data.zhmgw} />
+				<Bdx label='招募人数' value={`${data.zhmrsh}人`} />
+				<Bdx label='报名方式' value={data.bmfsh} />
+				<Bdx label='开始时间' value={dt2str(data.bmkshshj, 'datetime')} />
+				<Bdx label='截止时间' value={dt2str(data.bmjzhshj, 'datetime')} />
 			</div>
 		</div>
 		<style jsx>{`

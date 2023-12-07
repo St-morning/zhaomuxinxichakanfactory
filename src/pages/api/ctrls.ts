@@ -1,5 +1,6 @@
 import code from './controllers/code';
 import shtzhm from './controllers/shtzhm';
+import zhmxx from './controllers/zhmxx';
 import sysConfig from './controllers/sys/config';
 import sysFile from './controllers/sys/file';
 import sysGroup from './controllers/sys/group';
@@ -7,14 +8,15 @@ import sysLog from './controllers/sys/log';
 import sysMenu from './controllers/sys/menu';
 import sysRole from './controllers/sys/role';
 import sysSession from './controllers/sys/session';
-import sysSessionCookie from './controllers/sys/session/cookie';
 import sysTbimpexp from './controllers/sys/tbimpexp';
 import sysUser from './controllers/sys/user';
 import sysUtils from './controllers/sys/utils';
+import sysSessionCookie from './controllers/sys/session/cookie';
 
 const ctrls = {
-	shtzhm,
 	code,
+	shtzhm,
+	zhmxx,
 	sysConfig,
 	sysFile,
 	sysGroup,

@@ -4,14 +4,17 @@ import Ui from '../../../../components/ui';
 import Biaoti from './biaoti';
 import Wzhxx from './wzhxx';
 import Zhmxxlb from './zhmxxlb';
+import ctrls from '../../../api/ctrls';
+import { ZhmxxLbchxResult } from '../../../api/controllers/zhmxx';
 
 interface IProps {
+	data: ZhmxxLbchxResult[];
 }
 
 /**
  * 招募信息查看
  */
-const Page: NextPage<IProps> = () => {
+const Page: NextPage<IProps> = ({ data }) => {
 	return (
 		<>
 			<Head>
@@ -19,7 +22,7 @@ const Page: NextPage<IProps> = () => {
 			</Head>
 			<Ui.Layout.Page>
 				<Biaoti />
-				<Zhmxxlb />
+				<Zhmxxlb data={data} />
 				<Wzhxx />
 			</Ui.Layout.Page>
 		</>
@@ -36,7 +39,10 @@ export default Page;
 // eslint-disable-next-line require-await, @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<IProps> = async (context) => {
 	const query = context.query as Record<string, string>;
+	const data = await ctrls.zhmxx.lbchx({});
 	return {
-		props: {}
+		props: {
+			data
+		}
 	};
 };
